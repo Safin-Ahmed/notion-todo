@@ -1,0 +1,41 @@
+.single_task,
+.single_task div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.single_task {
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.single_task:last-child {
+  border-bottom: 0px solid transparent;
+  margin-bottom: 0;
+}
+
+.status {
+  padding: 0.25rem 1rem;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.line_through {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.red {
+  background-color: rgb(255, 89, 89);
+}
+
+.yellow {
+  background-color: rgb(241, 147, 5);
+}
+
+.green {
+  background-color: green;
+}

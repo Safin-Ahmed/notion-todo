@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Layout/Header";
+import Main from "./components/Layout/Main";
 import NameForm from "./components/NameForm";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <NameForm onSubmit={setUsername} onClick={showFormHandler} />
       )}
       <Header username={username} onClick={showFormHandler} />
+      <Main />
     </>
   );
 }

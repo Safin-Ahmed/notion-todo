@@ -17,7 +17,7 @@ const NameForm = (props) => {
           label="Your Name"
           input={{ type: "text", id: "editName" }}
         />
-        <button>Submit</button>
+        <button style={{ marginTop: "0.75rem" }}>Submit</button>
       </form>
     </Modal>
   );
