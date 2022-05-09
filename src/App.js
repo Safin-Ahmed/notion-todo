@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Layout/Header";
+import NameForm from "./components/NameForm";
 
 function App() {
+  const [isClicked, setIsClicked] = useState(false);
+  const [username, setUsername] = useState("Safin Ahmed");
+  const showFormHandler = () => {
+    setIsClicked(!isClicked);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isClicked && (
+        <NameForm onSubmit={setUsername} onClick={showFormHandler} />
+      )}
+      <Header username={username} onClick={showFormHandler} />
+    </>
   );
 }
 
