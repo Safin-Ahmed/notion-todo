@@ -8,13 +8,18 @@
 .single_task {
   justify-content: space-between;
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #ccc;
 }
 
 .single_task:last-child {
   border-bottom: 0px solid transparent;
   margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.single_task select {
+  padding: 0.25rem 0.5rem;
 }
 
 .status {

@@ -15,7 +15,7 @@ function App() {
         <NameForm onSubmit={setUsername} onClick={showFormHandler} />
       )}
       <Header username={username} onClick={showFormHandler} />
-      <Main />
+      <Main username={username} />
     </>
   );
 }

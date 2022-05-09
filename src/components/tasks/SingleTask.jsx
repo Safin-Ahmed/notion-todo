@@ -4,21 +4,25 @@ import classes from "./SingleTask.module.css";
 
 const SingleTask = ({ task, onUpdate }) => {
   const checkBoxHandler = (e) => {
-    if (e.target.checked) {
-      onUpdate(task.id);
-      e.target.setAttribute("disabled", "");
-    }
+    const option = e.target.options[e.target.selectedIndex];
+    console.log(option.value);
+    onUpdate(task.id, option.value);
   };
   return (
     <li className={classes.single_task}>
       <div>
-        <input
+        {/* <input
           onChange={checkBoxHandler}
           className={classes.checkbox}
           type="checkbox"
           checked={task.status === "Completed"}
           disabled={task.status === "Completed"}
-        />
+        /> */}
+        <select value={task.status} onChange={checkBoxHandler}>
+          <option value="Due">Due</option>
+          <option value="Running">Running</option>
+          <option value="Completed">Completed</option>
+        </select>
         <h3
           className={
             task.status === "Completed" ? `${classes.line_through}` : ""

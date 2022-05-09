@@ -22,7 +22,7 @@ const DUMMY_DATA = [
   },
 ];
 
-const Main = () => {
+const Main = (props) => {
   const [tasksList, setTasksList] = useState(DUMMY_DATA);
   const todoRef = useRef();
   const taskListClearHandler = () => {
@@ -34,14 +34,14 @@ const Main = () => {
 
     setTasksList([]);
   };
-  const taskListUpdateHandler = (id) => {
+  const taskListUpdateHandler = (id, status) => {
     setTasksList((prevState) => {
       const existingTaskIndex = prevState.findIndex((state) => state.id === id);
       const existingTask = prevState[existingTaskIndex];
       if (existingTask) {
         const updatedTask = {
           ...existingTask,
-          status: "Completed",
+          status: status,
         };
         const updatedTasksList = [...prevState];
         updatedTasksList[existingTaskIndex] = updatedTask;
@@ -89,6 +89,7 @@ const Main = () => {
           onClear={taskListClearHandler}
           onUpdate={taskListUpdateHandler}
           tasks={tasksList}
+          username={props.username}
         />
       </div>
     </main>
